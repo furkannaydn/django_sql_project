@@ -136,6 +136,23 @@ Aşağıda Django shell'de çalıştırılan bazı ORM sorgu örnekleri yer alma
     Musician.objects.filter(name__iendswith="s").all()
     ```
 
+12. **Update an object:**
+    ```python
+    # Get the record with pk=5
+    myrecord = Musician.objects.get(pk=5)
+    # Change the name
+    myrecord.name = "jack nick"
+    # Save the changes to the database
+    myrecord.save()
+    ```
+
+13. **Delete an object:**
+    ```python
+    # Get the record with pk=4 and delete it
+    jhon = Musician.objects.get(pk=4)
+    jhon.delete()
+    ```
+
 ### Türkçe
 
 1.  **Django shell'i başlatma:**
@@ -200,6 +217,23 @@ Aşağıda Django shell'de çalıştırılan bazı ORM sorgu örnekleri yer alma
     Musician.objects.filter(name__endswith="s").all()
     # Adı 'S' veya 's' ile biten müzisyenleri getir (büyük/küçük harfe duyarsız)
     Musician.objects.filter(name__iendswith="s").all()
+    ```
+
+12. **Bir nesneyi güncelleme:**
+    ```python
+    # pk=5 olan kaydı getir
+    myrecord = Musician.objects.get(pk=5)
+    # İsmi değiştir
+    myrecord.name = "jack nick"
+    # Değişiklikleri veritabanına kaydet
+    myrecord.save()
+    ```
+
+13. **Bir nesneyi silme:**
+    ```python
+    # pk=4 olan kaydı getir ve sil
+    jhon = Musician.objects.get(pk=4)
+    jhon.delete()
     ```
 ---
 
