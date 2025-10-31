@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Musicians</title>
+</head>
+<body>
+
+
+    <!-- English: Main heading for the page -->
+    <!-- Türkçe: Sayfa için ana başlık -->
+    <h1>Musicians List</h1>
+    <ul>
+        <!-- English: Django template loop. It iterates over each 'musician' in the 'musicians' list passed from the view. -->
+        <!-- Türkçe: Django şablon döngüsü. View'dan gönderilen 'musicians' listesindeki her bir 'musician' için döner. -->
+        {% for musician in musicians %}
+            <!-- English: Display the name and instrument for each musician. Note: The model has a 'name' field, not 'first_name' or 'last_name'. -->
+            <!-- Türkçe: Her müzisyenin adını ve enstrümanını göster. Not: Modelde 'first_name' veya 'last_name' değil, 'name' alanı bulunmaktadır. -->
+            <li>{{ musician.name }} - {{ musician.instrument }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
